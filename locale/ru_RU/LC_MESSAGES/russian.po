@@ -1,0 +1,115 @@
+# UNO CARD GAME.
+# Copyright (C) 2018 MIPT PYTHON GROUP
+# Nikolai Gaiduchenko, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2018-02-20 18:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Nikolai Gaiduchenko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: uno.py:30
+msgid "<UnoCard object: {} {}>"
+msgstr "<Объект UnoCard: {} {}>"
+
+#: uno.py:43 uno.py:72
+msgid "Invalid color"
+msgstr "Неверный цвет"
+
+#: uno.py:45 uno.py:47
+msgid "Invalid card type"
+msgstr "Неверный тип карты"
+
+#: uno.py:101
+msgid "Invalid player: must be initalised with 7 UnoCards"
+msgstr "Ошибка инициализации игрока: должен быть создан с 7 UnoCards"
+
+#: uno.py:105
+msgid "Invalid player: cards must all be UnoCard objects"
+msgstr "Ошибка инициализации игрока: все карты должны быть объектами UnoCard"
+
+#: uno.py:112
+msgid "<UnoPlayer object: player {}>"
+msgstr "<Объект UnoPlayer: игрок {}>"
+
+#: uno.py:114
+msgid "<UnoPlayer object>"
+msgstr "Объект UnoPlayer"
+
+#: uno.py:141
+msgid "Invalid game: players must be integer"
+msgstr "Ошибка игры: количество игроков должно быть задано целым числом"
+
+#: uno.py:143
+msgid "Invalid game: must be between 2 and 15 players"
+msgstr "Ошибка игры: требуется от 2 до 15 игроков"
+
+#: uno.py:209
+msgid "Invalid player: should be the index number"
+msgstr "Ошибка игрока: должен быть номер-индекс"
+
+#: uno.py:211
+msgid "Invalid player: index out of range"
+msgstr "Ошибка игрока: выход за границы массива"
+
+#: uno.py:214
+msgid "Invalid player: not their turn"
+msgstr "Ошибка игрока: не их ход"
+
+#: uno.py:222
+msgid "Invalid card: {} not playable on {}"
+msgstr "Неверная карта: {} нельзя сыграть на {}"
+
+#: uno.py:229
+msgid "Invalid new_color: must be red, yellow, green or blue"
+msgstr "Ошибка new_color: должен быть red, yellow, green или blue"
+
+#: uno.py:232
+msgid "Game is over"
+msgstr "Игра окончена"
+
+#: uno.py:266
+msgid "Player {} wins!"
+msgstr "Игрок {} победил!"
+
+#: uno.py:337
+msgid "The game begins. You are Player {}."
+msgstr "Игра началась. Вы - игрок {}"
+
+#: uno.py:349
+msgid "Current card: {}, color: {}"
+msgstr "Текущая карта: {}, цвет: {}"
+
+#: uno.py:356
+msgid "Which card do you want to play? "
+msgstr "Какую карту Вы хотите сыграть? "
+
+#: uno.py:359
+msgid "Cannot play that card"
+msgstr "Нельзя сыграть эту карту"
+
+#: uno.py:362
+msgid "Which color do you want? "
+msgstr "Какой цвет Вы выбераете? "
+
+#: uno.py:368
+msgid "You cannot play. You must pick up a card."
+msgstr "Вы не можете ходить. Вы должны взять карту."
+
+#: uno.py:378
+msgid "Player {} played {}"
+msgstr "Игрок {} сыграл {}"
+
+#: uno.py:382
+msgid "Player {} picked up"
+msgstr "Игрок {} взял карту из колоды"
+
+#: uno.py:386
+msgid "Your hand: {}"
+msgstr "Ваши карты: {}"
