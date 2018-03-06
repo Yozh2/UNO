@@ -38,6 +38,58 @@ class UnoCard:
     def __eq__(self, other):
         return self.color == other.color and self.card_type == other.card_type
 
+    def __lt__(self, other):
+        card1 = str(self)
+        card2 = str(other)
+
+        if (card1 == card2):
+            return 0
+
+        def _det_col(card):
+            if card[0] == 'R':
+                return 0
+            if card[0] == 'Y':
+                return 1
+            if card[0] == 'G':
+                return 2
+            if card[0] == 'B':
+                return 3
+
+        def _det_ord(card):
+            if card[1:] == 'S' or card[1:] == 'R' or card[1:] == '+2':
+                return 1
+            else:
+                return 0
+
+        def _ret_int(card):
+            return int(card[1])
+
+        def _det_spec(card):
+            if card[1:] == 'S':
+                return 0
+            elif card[1:] == 'R':
+                return 1
+            else:
+                return 2
+
+        def _cmp_cards(cards1):
+            card = str(cards1)
+            if card[1] == 'W' or card[1:] == '+4':
+                if card[1] == 'W':
+                    return (1, 0, 0, 0)
+                else:
+                    return (1, 1, 0, 0)
+            else:
+                if _det_ord(card) > 0:
+                    return (0, 1, _det_col(card), _det_spec(card))
+                else:
+                    return (0, 0, _det_col(card), _ret_int(card))
+
+        return _cmp_cards(card1) < _cmp_cards(card2)
+
+    def __gt__(self, other):
+        return not (self < other)
+
     def _validate(self, color, card_type):
         """
         Check the card is valid, raise exception if not.
@@ -107,7 +159,7 @@ class UnoPlayer:
             raise ValueError(
                 _('Invalid player: cards must all be UnoCard objects')
             )
-        self.hand = cards
+        self.hand = sorted(cards)
         self.player_id = player_id
 
     def __repr__(self):
@@ -235,6 +287,7 @@ class UnoGame:
             raise ValueError(_('Game is over'))
 
         played_card = _player.hand.pop(card)
+        _player.hand.sort()
         self.deck.append(played_card)
 
         card_color = played_card.color
@@ -278,6 +331,7 @@ class UnoGame:
         """
         penalty_cards = [self.deck.pop(0) for i in range(n)]
         player.hand.extend(penalty_cards)
+        player.hand.sort()
 
 
 class ReversibleCycle:
